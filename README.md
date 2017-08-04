@@ -1,6 +1,8 @@
 自分用フレームワーク
 
+
 ```
-node install
+npm install
 gulp
 ```
+src以下を編集する
