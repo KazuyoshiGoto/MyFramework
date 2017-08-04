@@ -1,0 +1,10 @@
+//Sass Variables
+@import "_includes/variables";
+
+//Style
+h1 {
+  color: $blue;
+}
+
+//Common CSS
+@import "_includes/common";

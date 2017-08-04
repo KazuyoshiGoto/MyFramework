@@ -1,0 +1,46 @@
+// Layout
+//===================================================================
+$width-full   : 1200px;  //最大横幅
+$width-tablet : 1024px;  //タブレット扱いするサイズ
+$width-mobile : 480px;   //スマホ扱いするサイズ
+
+
+// Font
+//===================================================================
+$base-font-size   : 16px;
+$mobile-font-size : 14px;
+$base-font-family : -apple-system, BlinkMacSystemFont, 'helvetica neue', Helvetica, 'Hiragino Sans', 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo, 'ms pgothic', sans-serif;
+$base-font-family : -apple-system, BlinkMacSystemFont,"Helvetica Neue",Helvetica,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+$base-font-weight : normal;//200;
+$bold-font-weight : 600;//400;
+$base-font-color  : #333;//#666;
+$link-color       : #04c;
+
+
+// Color
+//===================================================================
+$color-main  : #099;
+$color-sub   : #066;
+$color-point : #f60;
+
+$color-main-back : #fff;
+$color-sub-back : #f0f0f0;
+
+$black       : #000;
+$gray3       : #333;
+$dark-gray   : #353535;
+$gray6       : #666;
+$gray9       : #999;
+$grayC       : #ccc;
+$light-gray  : #f0f0f0;
+$warm-gray   : #f6f6f0;
+$white       : #fff;
+
+$red    : #f30;
+$green  : #096;
+$blue   : #06c;
+$orange : #f90;
+$aqua   : #e0f2f2;
+
+$color-twitter: #1da1f2;
+$color-facebook: #3b5998;

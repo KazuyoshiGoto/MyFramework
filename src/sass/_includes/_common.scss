@@ -1,0 +1,191 @@
+// display controll
+//===================================================================
+.inline-block {
+  display: inline-block;
+  line-height: inherit;
+}
+.inline {
+  display: inline;
+}
+
+// color & bgcolor
+//===================================================================
+.color-main {
+  color: $color-main;
+}
+.color-sub {
+  color: $color-sub;
+}
+.color-point {
+  color: $color-point;
+}
+
+.color-black {
+  color: #000 !important;
+}
+.color-gray {
+  color: #999 !important;
+}
+.color-gray-dark {
+  color: #666 !important;
+}
+.color-gray-light {
+  color: #ccc !important;
+}
+.color-red {
+  color: $red;
+}
+.color-green {
+  color: $green;
+}
+.color-blue {
+  color: $blue;
+}
+.color-orange {
+  color: $orange;
+}
+
+.bg-gray {
+  background-color: #eee;
+}
+.bg-gray-light {
+  background-color: #f6f6f6;
+}
+
+// float & align
+//===================================================================
+.floatRight {
+  float: right !important;
+}
+.floatLeft {
+  float: left !important;
+}
+.center {
+  text-align: center !important;
+}
+.taRight {
+  text-align: right !important;
+}
+.taLeft {
+  text-align: left !important;
+}
+.vaMiddle {
+  vertical-align: middle;
+}
+
+// flex control
+//===================================================================
+.justify-center {
+  justify-content: center !important;
+}
+.justify-between {
+  justify-content: space-between !important;
+}
+.justify-around {
+  justify-content: space-around !important;
+}
+.items-center {
+  align-items: center;
+}
+.flex-center {
+  justify-content: space-around !important;
+  align-items: center;
+}
+
+// font-size loop
+//===================================================================
+@for $i from 10 through 32 {
+  .fs#{$i} {
+    font-size:#{$i}px !important;
+  }
+}
+.fs48 {
+  font-size: 48px !important;
+}
+.fs64 {
+  font-size: 64px !important;
+}
+
+// font-decoration
+//===================================================================
+.bold {
+  font-weight: bold;
+}
+.italic {
+  font-style: italic;
+}
+
+// margin & padding loop
+//===================================================================
+@for $i from 0 through 20 {
+  .mg#{$i * 5} {
+    margin:#{$i * 5}px !important;
+  }
+  .mt#{$i * 5} {
+    margin-top:#{$i * 5}px !important;
+  }
+  .mr#{$i * 5} {
+    margin-right:#{$i * 5}px !important;
+  }
+  .mb#{$i * 5} {
+    margin-bottom:#{$i * 5}px !important;
+  }
+  .ml#{$i * 5} {
+    margin-left:#{$i * 5}px !important;
+  }
+  .pd#{$i * 5} {
+    padding:#{$i * 5}px !important;
+  }
+  .pt#{$i * 5} {
+    padding-top:#{$i * 5}px !important;
+  }
+  .pr#{$i * 5} {
+    padding-right:#{$i * 5}px !important;
+  }
+  .pb#{$i * 5} {
+    padding-bottom:#{$i * 5}px !important;
+  }
+  .pl#{$i * 5} {
+    padding-left:#{$i * 5}px !important;
+  }
+}
+.mb120 {
+  margin-bottom: 120px;
+}
+
+// width & height
+//===================================================================
+@for $i from 0 through 20 {
+  .w#{$i * 5} {
+    width: #{$i * 5}% !important;
+  }
+  .h#{$i * 5} {
+    height: #{$i * 5}% !important;
+  }
+}
+
+// Mobile Control
+//===================================================================
+@media screen and (max-width: 639px) {
+  .mhide {
+    display: none;
+  }
+  .mblock {
+    display: block;
+  }
+}
+
+// flex class
+//===================================================================
+.flex-around, .flex-list.around {
+  justify-content: space-around !important;
+}
+.flex-between, .flex-list.between {
+  justify-content: space-between !important;
+}
+.flex-start {
+  justify-content: flex-start !important;
+}
+.flex-center {
+  align-items: center;
+}
