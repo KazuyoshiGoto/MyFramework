@@ -1,7 +1,8 @@
 //- Variables Setting
+include _includes/_variables.pug
 -
-  var head = {
-    title : 'SiteTitle'
+  var pagehead = {
+    pageTitle : ''
   }
 
 //- START HTML
@@ -11,12 +12,10 @@ html(lang="ja")
 
   //- START BODY
   body
-    h1 hogehoge
-    h2 puge
 
     //- hero
     section#hero
-      h2 hero
+      h1 hero
 
     //- history
     section#history

@@ -5,6 +5,10 @@
 h1 {
   color: $blue;
 }
+section {
+  max-width: $width-full;
+  margin: 0 auto;
+}
 
 //Common CSS
 @import "_includes/common";

@@ -164,17 +164,6 @@
   }
 }
 
-// Mobile Control
-//===================================================================
-@media screen and (max-width: 639px) {
-  .mhide {
-    display: none;
-  }
-  .mblock {
-    display: block;
-  }
-}
-
 // flex class
 //===================================================================
 .flex-around, .flex-list.around {
@@ -188,4 +177,15 @@
 }
 .flex-center {
   align-items: center;
+}
+
+// Mobile Control
+//===================================================================
+@media screen and (max-width: $width-mobile) {
+  .mhide {
+    display: none;
+  }
+  .mblock {
+    display: block;
+  }
 }

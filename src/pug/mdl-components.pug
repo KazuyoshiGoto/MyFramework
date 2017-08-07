@@ -1,0 +1,141 @@
+//- Variables Setting
+include _includes/_variables.pug
+-
+  var pagehead = {
+    pageTitle : 'MDL Style'
+  }
+
+//- START HTML
+doctype html
+html(lang="ja")
+  include _includes/_head.pug
+
+  //サンプル表示用スタイル
+  style.
+    .grid-demo .mdl-cell{
+      background: #eee;
+      padding:5px;
+    }
+    .demo-card > .mdl-card__title {
+      color: #fff;
+      height: 176px;
+      background: url('https://getmdl.io/assets/demos/welcome_card.jpg') center / cover;
+    }
+    .demo-card > .mdl-card__menu {
+      color: #fff;
+    }
+
+  //- START BODY
+  body
+    .mdl-layout.mdl-js-layout
+      header.mdl-layout__header.mdl-layout__header--scroll
+        .mdl-layout__header-row
+          span.mdl-layout-title #{global.siteTitle}
+          .mdl-layout-spacer
+          nav.mdl-navigation
+            a.mdl-navigation__link(href="#hoge") Link
+            a.mdl-navigation__link(href="#hoge") Link
+            a.mdl-navigation__link(href="#hoge") Link
+      .mdl-layout__drawer
+        .mdl-layout-title #{global.siteTitle}
+        nav.mdl-navigation
+          a.mdl-navigation__link(href="#hoge") Link
+          a.mdl-navigation__link(href="#hoge") Link
+          a.mdl-navigation__link(href="#hoge") Link
+      main.mdl-layout__content
+        section
+          h1 MDL Components
+
+        //- hero
+        section
+          h2 Grid
+          .mdl-grid.grid-demo
+            - for (var x = 0; x < 12; x++)
+              .mdl-cell.mdl-cell--1-col 1
+          .mdl-grid.grid-demo
+            - for (var x = 0; x < 6; x++)
+              .mdl-cell.mdl-cell--2-col 2
+          .mdl-grid.grid-demo
+            - for (var x = 0; x < 4; x++)
+              .mdl-cell.mdl-cell--3-col 3
+          .mdl-grid.grid-demo
+            - for (var x = 0; x < 3; x++)
+              .mdl-cell.mdl-cell--4-col 4
+          .mdl-grid.grid-demo
+            - for (var x = 0; x < 2; x++)
+              .mdl-cell.mdl-cell--6-col 6
+
+        //- history
+        section#history
+          h2 Grid & Card
+          p 結論から言うと、mdl-gridにmdl-cardを収めてはいけない。
+          p mdl-cellとmdl-cardでwidthの取り方が別に存在するため、めり込みが発生する。Card一覧用など別途flexするスタイルを作るのが好ましい。
+
+          .mdl-grid
+            - for (var x = 0; x < 3; x++)
+              .mdl-cell.mdl-cell--4-col
+                .demo-card.mdl-card.mdl-shadow--2dp
+                  .mdl-card__title
+                    h2.mdl-card__title-text Welcome
+                  .mdl-card__supporting-text.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Mauris sagittis pellentesque lacus eleifend lacinia...
+                  .mdl-card__actions.mdl-card--border
+                    a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect Get Started
+                  .mdl-card__menu
+                    button.mdl-button.mdl-button--icon.mdl-js-button.mdl-js-ripple-effect
+                      i.material-icons share
+
+      footer.mdl-mega-footer
+        .mdl-mega-footer__middle-section
+
+          <div class="mdl-mega-footer__drop-down-section">
+            <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+            <h1 class="mdl-mega-footer__heading">Features</h1>
+            <ul class="mdl-mega-footer__link-list">
+              <li><a href="#">About</a></li>
+              <li><a href="#">Terms</a></li>
+              <li><a href="#">Partners</a></li>
+              <li><a href="#">Updates</a></li>
+            </ul>
+          </div>
+
+          <div class="mdl-mega-footer__drop-down-section">
+            <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+            <h1 class="mdl-mega-footer__heading">Details</h1>
+            <ul class="mdl-mega-footer__link-list">
+              <li><a href="#">Specs</a></li>
+              <li><a href="#">Tools</a></li>
+              <li><a href="#">Resources</a></li>
+            </ul>
+          </div>
+
+          <div class="mdl-mega-footer__drop-down-section">
+            <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+            <h1 class="mdl-mega-footer__heading">Technology</h1>
+            <ul class="mdl-mega-footer__link-list">
+              <li><a href="#">How it works</a></li>
+              <li><a href="#">Patterns</a></li>
+              <li><a href="#">Usage</a></li>
+              <li><a href="#">Products</a></li>
+              <li><a href="#">Contracts</a></li>
+            </ul>
+          </div>
+
+          <div class="mdl-mega-footer__drop-down-section">
+            <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
+            <h1 class="mdl-mega-footer__heading">FAQ</h1>
+            <ul class="mdl-mega-footer__link-list">
+              <li><a href="#">Questions</a></li>
+              <li><a href="#">Answers</a></li>
+              <li><a href="#">Contact us</a></li>
+            </ul>
+          </div>
+
+        <div class="mdl-mega-footer__bottom-section">
+          <div class="mdl-logo">Title</div>
+          <ul class="mdl-mega-footer__link-list">
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Privacy & Terms</a></li>
+          </ul>
+        </div>
