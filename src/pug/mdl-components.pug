@@ -12,6 +12,9 @@ html(lang="ja")
 
   //サンプル表示用スタイル
   style.
+    html,body,p {
+      font-size: 16px;
+    }
     .grid-demo .mdl-cell{
       background: #eee;
       padding:5px;
@@ -46,7 +49,6 @@ html(lang="ja")
         section
           h1 MDL Components
 
-        //- hero
         section
           h2 Grid
           .mdl-grid.grid-demo
@@ -65,11 +67,10 @@ html(lang="ja")
             - for (var x = 0; x < 2; x++)
               .mdl-cell.mdl-cell--6-col 6
 
-        //- history
-        section#history
+        section
           h2 Grid & Card
-          p 結論から言うと、mdl-gridにmdl-cardを収めてはいけない。
-          p mdl-cellとmdl-cardでwidthの取り方が別に存在するため、めり込みが発生する。Card一覧用など別途flexするスタイルを作るのが好ましい。
+          p mdl-gridにmdl-cardを<b>単純に収めるのはNG。</b>
+          p mdl-cellとmdl-cardでwidthの取り方が別に存在するため、めり込みが発生する。
 
           .mdl-grid
             - for (var x = 0; x < 3; x++)
@@ -86,56 +87,37 @@ html(lang="ja")
                     button.mdl-button.mdl-button--icon.mdl-js-button.mdl-js-ripple-effect
                       i.material-icons share
 
-      footer.mdl-mega-footer
-        .mdl-mega-footer__middle-section
+          h3 Grid & Card 調整版
+          p mdl-cardにw100で横幅いっぱいに広がるよう調整した。これなら表示に耐える。
+          .mdl-grid
+            - for (var x = 0; x < 3; x++)
+              .mdl-cell.mdl-cell--4-col
+                .demo-card.mdl-card.mdl-shadow--2dp.w100
+                  .mdl-card__title
+                    h2.mdl-card__title-text Welcome
+                  .mdl-card__supporting-text.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Mauris sagittis pellentesque lacus eleifend lacinia...
+                  .mdl-card__actions.mdl-card--border
+                    a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect Get Started
+                  .mdl-card__menu
+                    button.mdl-button.mdl-button--icon.mdl-js-button.mdl-js-ripple-effect
+                      i.material-icons share
+        section
+          h2 Icon
+            .mdl-grid
+              .mdl-cell.mdl-cell--2-col.center
+                i.material-icons face
+        section
+          h2 Footer
+          p mega-footerはレスポンシブ時に画面下に残り続けるため、Webアプリでしか使えない。
+          p Webサイトにはmini-footerが妥当。もしくは独自に作る。
 
-          <div class="mdl-mega-footer__drop-down-section">
-            <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
-            <h1 class="mdl-mega-footer__heading">Features</h1>
-            <ul class="mdl-mega-footer__link-list">
-              <li><a href="#">About</a></li>
-              <li><a href="#">Terms</a></li>
-              <li><a href="#">Partners</a></li>
-              <li><a href="#">Updates</a></li>
-            </ul>
-          </div>
-
-          <div class="mdl-mega-footer__drop-down-section">
-            <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
-            <h1 class="mdl-mega-footer__heading">Details</h1>
-            <ul class="mdl-mega-footer__link-list">
-              <li><a href="#">Specs</a></li>
-              <li><a href="#">Tools</a></li>
-              <li><a href="#">Resources</a></li>
-            </ul>
-          </div>
-
-          <div class="mdl-mega-footer__drop-down-section">
-            <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
-            <h1 class="mdl-mega-footer__heading">Technology</h1>
-            <ul class="mdl-mega-footer__link-list">
-              <li><a href="#">How it works</a></li>
-              <li><a href="#">Patterns</a></li>
-              <li><a href="#">Usage</a></li>
-              <li><a href="#">Products</a></li>
-              <li><a href="#">Contracts</a></li>
-            </ul>
-          </div>
-
-          <div class="mdl-mega-footer__drop-down-section">
-            <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
-            <h1 class="mdl-mega-footer__heading">FAQ</h1>
-            <ul class="mdl-mega-footer__link-list">
-              <li><a href="#">Questions</a></li>
-              <li><a href="#">Answers</a></li>
-              <li><a href="#">Contact us</a></li>
-            </ul>
-          </div>
-
-        <div class="mdl-mega-footer__bottom-section">
-          <div class="mdl-logo">Title</div>
-          <ul class="mdl-mega-footer__link-list">
-            <li><a href="#">Help</a></li>
-            <li><a href="#">Privacy & Terms</a></li>
-          </ul>
-        </div>
+        footer.mdl-mini-footer
+          div
+            .mdl-logo Title
+            ul.mdl-mini-footer__link-list
+              li
+                a(href="#") Menu1
+              li
+                a(href="#") Menu2

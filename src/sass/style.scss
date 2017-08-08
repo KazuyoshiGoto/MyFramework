@@ -10,5 +10,9 @@ section {
   margin: 0 auto;
 }
 
+.flex-list {
+  display: flex;
+}
+
 //Common CSS
 @import "_includes/common";
