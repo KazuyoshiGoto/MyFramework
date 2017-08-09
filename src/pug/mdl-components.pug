@@ -105,9 +105,15 @@ html(lang="ja")
                       i.material-icons share
         section
           h2 Icon
-            .mdl-grid
-              .mdl-cell.mdl-cell--2-col.center
-                i.material-icons face
+          p FontAwesomeと違いアイコン別にクラスはなく、<b>material-icons</b>に内包されるテキストによってアイコンが変わる。
+          a(href="https://material.io/icons/" target="_blank") https://material.io/icons/
+          .mdl-grid
+            - var icons = ["face","favorite","star","lock","room","thumb_up","error","email","send","create","save","schedule"]
+            each icon in icons
+              .mdl-cell.mdl-cell--1-col.center
+                i.material-icons #{icon}
+                p #{icon}
+
         section
           h2 Footer
           p mega-footerはレスポンシブ時に画面下に残り続けるため、Webアプリでしか使えない。
