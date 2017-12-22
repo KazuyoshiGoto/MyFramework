@@ -5,6 +5,9 @@ var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var pug = require('gulp-pug');
 var browserSync = require("browser-sync");
+var browserify = require('browserify');
+var source = require('vinyl-source-stream');
+var uglify = require('gulp-uglify');
 
 //setting : paths
 var paths = {
@@ -12,7 +15,8 @@ var paths = {
   'css': './dist/css/',
   'pug': './src/pug/',
   'html': './dist/',
-  'js': './dist/js/'
+  'jsSrc': './src/js/',
+  'jsDist': './dist/js/'
 }
 //setting : Sass Options
 var sassOptions = {
@@ -23,7 +27,7 @@ var pugOptions = {
   pretty: true
 }
 
-//Sass
+//Sassコンパイル
 gulp.task('scss', function () {
   gulp.src(paths.scss + '**/*.scss')
     .pipe(plumber({ errorHandler: notify.onError("Error: <%= error.message %>") }))
@@ -32,7 +36,7 @@ gulp.task('scss', function () {
     .pipe(gulp.dest(paths.css))
 });
 
-//Pug
+//Pugコンパイル
 gulp.task('pug', () => {
   return gulp.src([paths.pug + '**/*.pug', '!' + paths.pug + '**/_*.pug'])
     .pipe(plumber({ errorHandler: notify.onError("Error: <%= error.message %>") }))
@@ -40,7 +44,24 @@ gulp.task('pug', () => {
     .pipe(gulp.dest(paths.html));
 });
 
-//Browser Sync
+//JS結合
+gulp.task('browserify', () => {
+  return browserify({
+    entries: [paths.jsSrc + 'main.js', paths.jsSrc + 'vuetest.js',]
+  })
+    .bundle()
+    .pipe(source('app.js'))
+    .pipe(gulp.dest(paths.jsDist));
+});
+
+//JS圧縮
+gulp.task('compress', () => {
+  return gulp.src(paths.jsDist + '*.js')
+    .pipe(uglify())
+    .pipe(gulp.dest(paths.jsDist));
+});
+
+//ブラウザ同期
 gulp.task('browser-sync', () => {
   browserSync({
     server: {
@@ -59,6 +80,8 @@ gulp.task('reload', () => {
 gulp.task('watch', function () {
   gulp.watch(paths.scss + '**/*.scss', ['scss']);
   gulp.watch([paths.pug + '**/*.pug', '!' + paths.pug + '**/_*.pug'], ['pug']);
+  gulp.watch(paths.jsSrc + '**/*.js', ['browserify']);
+  gulp.watch(paths.jsDist + '**/*.js', ['compress']);
 });
 
 gulp.task('default', ['browser-sync', 'watch']);
